@@ -12,14 +12,14 @@ const percentageRange = {
 
 storiesOf('Progress bar', module)
   .addDecorator(withKnobs)
-  .add('Default', () => '<progress-bar value="50"></progress-bar>')
-  .add('With Knobs!', () => {
+  .add('default view', () => '<progress-bar value="50"></progress-bar>')
+  .add('with Knobs!', () => {
     const el = document.createElement('progress-bar');
     el.value = number('Percentage', 50, percentageRange);
     el.reverse = boolean('Reversed', false);
     return el;
   })
-  .add('Moving', () => {
+  .add('moving with interval', () => {
     const el = document.createElement('progress-bar');
     const update = () => {
       el.value = (Number.parseInt(el.value) + 1) % 100;
@@ -30,7 +30,7 @@ storiesOf('Progress bar', module)
     window.requestAnimationFrame(update);
     return el;
   })
-  .add('Styled', () => {
+  .add('styled', () => {
     const properties = ({
       '--progress-bar-background-color': color('Background color', 'red', 'colors'),
       '--progress-bar-font-color': color('Font color', 'white', 'colors'),

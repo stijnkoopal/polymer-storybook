@@ -6,7 +6,7 @@ import './feedback-button.html';
 
 storiesOf('Feedback button', module)
   .addDecorator(withKnobs)
-  .add('Default', () => {
+  .add('default view', () => {
     const el = document.createElement('feedback-button');
     el.disabled = boolean('Disabled?', false);
     el.addEventListener('press', action('press'));
