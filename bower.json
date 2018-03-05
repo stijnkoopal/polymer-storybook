@@ -1,0 +1,6 @@
+{
+  "name": "polymer-storybook",
+  "dependencies": {
+    "polymer": "Polymer/polymer#2.5.0"
+  }
+}

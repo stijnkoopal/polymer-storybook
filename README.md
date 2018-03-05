@@ -1,1 +1,1 @@
-# polymer-storbyook
+# Polymer 2 with Storybook

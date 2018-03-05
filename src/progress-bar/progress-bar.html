@@ -1,0 +1,82 @@
+<link rel="import" href="../../bower_components/polymer/polymer.html">
+
+<dom-module id="progress-bar">
+  <template>
+    <style>
+      :host {
+        width: 100px;
+      }
+
+      .progress {
+        height: var(--progress-bar-height, 20px);
+        width: 100%;
+        background-color: var(--progress-bar-background-color, #c9c9c9);
+        position: relative;
+      }
+
+      .progress:before {
+        content: attr(data-label);
+        font-size: 0.6rem;
+        position: absolute;
+        text-align: center;
+        left: 0;
+        right: 0;
+        height: 100%;
+        line-height: var(--progress-bar-height, 20px);
+        color: var(--progress-bar-font-color, grey);
+      }
+
+      .progress .value {
+        background-color: var(--progress-bar-color, #7cc4ff);
+        display: inline-block;
+        height: 100%;
+      }
+
+      :host([reverse]) .progress .value {
+        float: right;
+      }
+    </style>
+
+    <div class="progress" data-label$="[[format(value)]]">
+      <span class="value" style="width: [[value]]%;"></span>
+    </div>
+
+  </template>
+
+  <script>
+    class ProgressBar extends Polymer.Element {
+      static get is() {
+        return 'progress-bar';
+      }
+
+      static get properties() {
+        return {
+          value: {
+            type: Number,
+            value: 0,
+          },
+
+          reverse: {
+            type: Boolean,
+            value: false,
+            reflectToAttribute: true,
+          },
+
+          showPercentage: {
+            type: Boolean,
+            value: false,
+          },
+
+          text: String,
+        };
+      }
+
+      format(number) {
+        return !number ? null : (Math.round(number * 100) / 100) + '%';
+      }
+    }
+
+    customElements.define(ProgressBar.is, ProgressBar);
+  </script>
+
+</dom-module>

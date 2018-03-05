@@ -1,0 +1,56 @@
+<link rel="import" href="../../bower_components/polymer/polymer.html">
+
+<dom-module id="feedback-button">
+  <template>
+    <style>
+      :host {
+        width: 30px;
+        height: 140px;
+        display: block;
+
+        background-color: var(--feedback-button-color, grey);
+        color: var(--feedback-button-font-color, white);
+        box-shadow: var(--feedback-button-shadow, 10px 10px 5px grey);
+        border-bottom-left-radius: 10px;
+        border-top-left-radius: 10px;
+
+        opacity: 0.8;
+        z-index: 100;
+
+        cursor: pointer;
+      }
+
+      :host([disabled]) {
+        cursor: not-allowed;
+      }
+
+      :host(:hover) {
+        background-color: var(--feedback-button-hover-color, red);
+      }
+
+      :host([disabled]:hover) {
+        background-color: var(--feedback-button-color, dark-grey);
+      }
+
+      #vertical-text {
+        transform: rotate(270deg);
+        position: relative;
+        top: 75px;
+      }
+    </style>
+
+    <section id="vertical-text">
+      Feedback
+    </section>
+
+  </template>
+
+  <script type="module">
+    import {feedbackButton} from './feedback-button';
+
+    class FeedbackButton extends feedbackButton(Polymer.Element) {
+    }
+
+    customElements.define(FeedbackButton.is, FeedbackButton);
+  </script>
+</dom-module>
