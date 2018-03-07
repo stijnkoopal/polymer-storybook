@@ -10,7 +10,6 @@
   "devDependencies": {
     "@storybook/addon-actions": "3.4.0-alpha.9",
     "@storybook/addon-knobs": "3.4.0-alpha.9",
-    "@storybook/addon-notes": "3.4.0-alpha.9",
     "@storybook/addon-viewport": "3.4.0-alpha.9",
     "@storybook/polymer": "3.4.0-alpha.9"
   },
