@@ -55,5 +55,4 @@ storiesOf('Progress bar', module)
       </style>
       <progress-bar value="${number('Percentage', 50, percentageRange)}"/>`, el);
     return el;
-    }
-  );
+  });
