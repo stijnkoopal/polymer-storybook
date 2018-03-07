@@ -1,5 +1,6 @@
 import {storiesOf} from '@storybook/polymer';
 import {withKnobs, number, boolean, color} from '@storybook/addon-knobs/polymer';
+import {html, render} from 'lit-html';
 
 import './progress-bar.html';
 
@@ -41,4 +42,18 @@ storiesOf('Progress bar', module)
     el.value = number('Percentage', 50, percentageRange);
     el.reverse = boolean('Reversed', false);
     return el;
-  });
+  })
+  .add('bonus: lit-html', () => {
+    const el = document.createElement('div');
+    render(html`
+      <style>
+        progress-bar {
+          --progress-bar-background-color: ${color('Background color', 'red', 'colors')};
+          --progress-bar-font-color: ${color('Font color', 'white', 'colors')};
+          --progress-bar-color: ${color('Foreground color', 'black', 'colors')};
+        }
+      </style>
+      <progress-bar value="${number('Percentage', 50, percentageRange)}"/>`, el);
+    return el;
+    }
+  );

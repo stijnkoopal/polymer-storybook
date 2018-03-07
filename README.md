@@ -8,5 +8,5 @@ yarn
 ## Start
 ```bash
 yarn storybook
-open chrome http://localhost:6006
+open http://localhost:6006
 ```
