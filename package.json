@@ -8,10 +8,12 @@
   "license": "MIT",
   "private": false,
   "devDependencies": {
-    "@storybook/addon-actions": "3.4.0-alpha.9",
-    "@storybook/addon-knobs": "3.4.0-alpha.9",
-    "@storybook/addon-viewport": "3.4.0-alpha.9",
-    "@storybook/polymer": "3.4.0-alpha.9"
+    "@storybook/addon-actions": "3.4.0-rc.0",
+    "@storybook/addon-knobs": "3.4.0-rc.0",
+    "@storybook/addon-viewport": "3.4.0-rc.0",
+    "@storybook/polymer": "3.4.0-rc.0",
+    "babel-core": "6.26.0",
+    "babel-runtime": "6.26.0"
   },
   "dependencies": {
     "bower": "1.8.2",
