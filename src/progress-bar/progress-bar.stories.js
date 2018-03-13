@@ -1,6 +1,7 @@
 import {storiesOf} from '@storybook/polymer';
 import {withKnobs, number, boolean, color} from '@storybook/addon-knobs/polymer';
 import {html, render} from 'lit-html';
+import {action} from '@storybook/addon-actions';
 
 import './progress-bar.html';
 
@@ -28,6 +29,7 @@ storiesOf('Progress bar', module)
     };
 
     el.value = 0;
+    el.addEventListener('value-change', e => action('value-change')(e.detail));
     window.requestAnimationFrame(update);
     return el;
   })

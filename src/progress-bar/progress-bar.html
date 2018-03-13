@@ -54,6 +54,7 @@
           value: {
             type: Number,
             value: 0,
+            observer: 'observeValue',
           },
 
           reverse: {
@@ -73,6 +74,10 @@
 
       format(number) {
         return !number ? null : (Math.round(number * 100) / 100) + '%';
+      }
+
+      observeValue(value) {
+        return this.dispatchEvent(new CustomEvent('value-change', {detail: value}));
       }
     }
 
