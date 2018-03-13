@@ -37,7 +37,7 @@
       }
     </style>
 
-    <div class="progress" data-label$="[[format(value)]]">
+    <div class="progress" data-label$="[[format(value, hidePercentage)]]">
       <span class="value" style="width: [[value]]%;"></span>
     </div>
 
@@ -63,16 +63,15 @@
             reflectToAttribute: true,
           },
 
-          showPercentage: {
+          hidePercentage: {
             type: Boolean,
             value: false,
           },
-
-          text: String,
         };
       }
 
-      format(number) {
+      format(number, hidePercentage) {
+        if (hidePercentage) return '';
         return !number ? null : (Math.round(number * 100) / 100) + '%';
       }
 

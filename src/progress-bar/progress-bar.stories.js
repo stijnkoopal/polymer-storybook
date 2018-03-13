@@ -19,6 +19,7 @@ storiesOf('Progress bar', module)
     const el = document.createElement('progress-bar');
     el.value = number('Percentage', 50, percentageRange);
     el.reverse = boolean('Reversed', false);
+    el.hidePercentage = boolean('Hide percentage', false);
     return el;
   })
   .add('moving with interval', () => {
