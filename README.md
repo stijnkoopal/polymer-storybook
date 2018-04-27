@@ -3,6 +3,7 @@
 ## Install
 ```bash
 yarn
+bower i
 ```
 
 ## Start
