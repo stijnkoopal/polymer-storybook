@@ -5,6 +5,7 @@
 ## Install
 ```bash
 yarn
+bower install
 ```
 
 ## Start
